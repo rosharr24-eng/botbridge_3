@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOTBRIDGE Registration</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dbeafe, #ede9fe);
+            padding: 30px 15px;
+            color: #263449;
+        }
+
+        .registration-form {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px #00000018;
+        }
+
+        h1 {
+            text-align: center;
+            color: #123c80;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        label {
+            display: block;
+            color: #123c80;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 6px #6366f155;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 18px 0;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-top: 4px;
+        }
+
+        .checkbox-group label {
+            font-weight: normal;
+            color: #475569;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 7px;
+            background: linear-gradient(135deg, #2563eb, #6d28d9);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #123c80;
+            transform: translateY(-2px);
+        }
+
+        #message {
+            text-align: center;
+            color: green;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 500px) {
+            .registration-form {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="registration-form">
+
+        <h1>🤖 BOTBRIDGE</h1>
+
+        <p class="description">
+            Register with BotBridge and explore
+            smart chatbot solutions.
+        </p>
+
+        <form id="registrationForm">
+
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name"
+                       name="fullName"
+                       placeholder="Enter your full name"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email"
+                       name="email"
+                       placeholder="Enter your email address"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Mobile Number *</label>
+                <input type="tel" id="phone"
+                       name="phone"
+                       placeholder="Enter mobile number"
+                       pattern="[0-9+() -]{7,20}"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob"
+                       name="dateOfBirth">
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                    <option value="">Select Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                    <option>Prefer not to say</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="institution">
+                    College / Company Name
+                </label>
+                <input type="text" id="institution"
+                       name="institution"
+                       placeholder="Enter college or company name">
+            </div>
+
+            <div class="form-group">
+                <label for="role">You Are a *</label>
+                <select id="role" name="role" required>
+                    <option value="">Select your role</option>
+                    <option>Student</option>
+                    <option>Business Owner</option>
+                    <option>Professional</option>
+                    <option>Developer</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="service">
+                    BOTBRIDGE Service Required *
+                </label>
+
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option>Website Chatbot</option>
+                    <option>AI Chatbot Integration</option>
+                    <option>Customer Support Automation</option>
+                    <option>Business Chatbot</option>
+                    <option>Chatbot Development</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">
+                    Purpose of Registration
+                </label>
+
+                <textarea id="reason" name="reason"
+                          rows="4"
+                          placeholder="Describe your requirements">
+                </textarea>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="agreement"
+                       name="agreement" required>
+
+                <label for="agreement">
+                    I confirm that the information provided
+                    is correct and agree to the terms and conditions.
+                </label>
+            </div>
+
+            <button type="submit">
+                Submit Registration
+            </button>
+
+            <p id="message" role="status"></p>
+
+        </form>
+
+    </div>
+
+    <script>
+        document.getElementById("registrationForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            document.getElementById("message").textContent =
+                "Thank you! Your BOTBRIDGE registration is successful.";
+
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
